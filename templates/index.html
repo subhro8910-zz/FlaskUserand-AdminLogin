@@ -1,0 +1,51 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}
+Demo App
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='starter-template.css')}}">
+{% endblock %}
+
+{% block content %}
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">User Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{ url_for('index') }}">Flask Project 1</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="{{url_for('index')}}">Home</a></li>
+            <li><a href="{{ url_for('adminlogin') }}">Admin Login</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>User Crud Operations Using Flask Development</h1>
+        <p class="lead">Flask is a microframework of python to develop web applications.<br> The Libraries Used In This Applications are as follows:</p>
+        <ul class="nav nav-sidebar">
+          <li><a href="http://flask.pocoo.org/">Flask MicroFramework</a></li>
+          <li><a href="https://pythonhosted.org/Flask-Bootstrap/">Flask Bootstrap for designing</a></li>
+          <li><a href="http://flask.pocoo.org/docs/1.0/patterns/wtforms/">Flask WTF(form) for method and actions </a></li>
+          <li><a href="http://flask-sqlalchemy.pocoo.org/2.3/">Flask SQL Alchemy tools for object mappin g from sqlite</a></li>
+          <li><a href="https://flask-login.readthedocs.io/en/latest/">Flask Login Manager for login and logout </a></li>
+          <li><a href="http://werkzeug.pocoo.org/">Flask - werkzeug.security for database encryption</a></li>
+
+      </div>
+
+    </div><!-- /.container -->
+{% endblock %}
